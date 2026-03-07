@@ -1,6 +1,6 @@
 ---
 import Layout from "../layout/Layout.astro";
-
+const celtaLogo = "url(/assets/celta-escudo.svg)";
 
 ---
 
@@ -68,7 +68,7 @@ import Layout from "../layout/Layout.astro";
 <script src="../lib/script.js"></script>
 </Layout>
 
-  <style>
+  <style define:vars={{ celtaLogo }}>
     :root {
       --celta-blue: #8ac3ee;
       --celta-red: #e5254e;
@@ -141,7 +141,7 @@ import Layout from "../layout/Layout.astro";
     }
 
     .brand-badge::after {
-      content: url(./assets/celta-escudo.svg);
+      content: var(--celtaLogo);
       position: absolute;
       top: 0px;
       left: 2px;
