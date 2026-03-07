@@ -1,5 +1,5 @@
     // URL donde sirves tu JSON desde Node/Express
-    const API_URL = 'http://localhost:8000/laliga/standings';
+    const API_URL = '/.netlify/functions/laliga-standings';
 
     async function loadStandings () {
       const errorEl = document.getElementById('error-message');
