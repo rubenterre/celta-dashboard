@@ -239,7 +239,7 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
     letter-spacing: 0.12em;
   }
 
-  .table-wrapper {
+/*   .table-wrapper {
     border-radius: 18px;
     background: var(--bg-card);
     border: 1px solid var(--border-soft);
@@ -252,7 +252,20 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
     font-size: 0.82rem;
     width: 100%;
     min-width: 700px;
-  }
+  } */
+   .table-wrapper {
+  border-radius: 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  min-width: 700px;
+}
 
   thead {
     background: linear-gradient(90deg, rgba(138,195,238,0.18), rgba(138,195,238,0.02));
@@ -275,7 +288,7 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
   }
 
   /* Columna 1: posición sticky con ancho fijo */
-  th:nth-child(1),
+/*   th:nth-child(1),
   td:nth-child(1) {
     position: sticky;
     left: 0;
@@ -288,18 +301,40 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
 
   thead th:nth-child(1) {
     z-index: 5;
-  }
+  } */
+   /* Columna 1: posición fija, con ancho explícito */
+th:nth-child(1),
+td:nth-child(1) {
+  position: sticky;
+  left: 0;
+  z-index: 4;                 /* por encima del resto */
+  background: var(--bg-card);
+  width: 40px;                /* ancho fijo de la col # */
+  min-width: 40px;
+  max-width: 40px;
+}
 
   /* Columna 2: solo escudo sticky, nombre se mueve */
-  th.team-col,
+/*   th.team-col,
   td.team-col {
     position: sticky;
-    left: 40px; /* igual que ancho col 1 */
+    left: 40px; 
     z-index: 3;
     background: var(--bg-card);
     text-align: left;
-    padding-left: 48px; /* hueco para el escudo */
-  }
+    padding-left: 48px; 
+  } */
+/* Columna 2: equipo (solo escudo fijo) */
+th.team-col,
+td.team-col {
+  position: sticky;
+  left: 40px;                 /* EXACTAMENTE el ancho de la col 1 */
+  z-index: 3;                 /* por debajo de la col 1 */
+  background: var(--bg-card);
+  padding-left: 42px;         /* hueco para el escudo */
+}
+
+  
 
   .pos {
     font-variant-numeric: tabular-nums;
@@ -310,7 +345,7 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
     color: var(--celta-gold);
   }
 
-  .team-name {
+ /*  .team-name {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -344,7 +379,39 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
 
   .team-name-text {
     white-space: nowrap;
-  }
+  } */
+
+  /* Escudo sticky dentro de la col 2 */
+.team-dot {
+  position: sticky;
+  left: 44px;                 /* un poco dentro de la col 2 */
+  z-index: 4;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 20%, #ffffff, var(--celta-blue));
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.6),
+    0 4px 8px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+.team-dot img {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.team-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-name-text {
+  white-space: nowrap;
+}
 
   .badge {
     display: inline-flex;
