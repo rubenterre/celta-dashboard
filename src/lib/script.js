@@ -24,7 +24,7 @@
         const updatedAt = data.updatedAt ? new Date(data.updatedAt) : null;
 
         seasonPill.textContent = season ? `${season} · ${competition}` : competition;
-        footerCompetition.textContent = competition + ' · Datos locales';
+        footerCompetition.textContent = competition + ' · Football-data.org';
 
         if (updatedAt) {
           updatedLabel.textContent = 'Actualizado ' + updatedAt.toLocaleString('es-ES', {
