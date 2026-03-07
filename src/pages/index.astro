@@ -58,7 +58,7 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
 
       <div class="footer">
         <span><span class="legend-dot"></span> Fila destacada: RC Celta</span>
-        <span id="footer-competition">LALIGA EA SPORTS · Datos locales</span>
+        <span id="footer-competition">LALIGA EA SPORTS · Datos football-data.org</span>
       </div>
 
       <div class="error-message" id="error-message" style="display:none;"></div>
@@ -98,7 +98,7 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
 
   .dashboard {
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
 /*     background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.005));
     border-radius: 24px;
     border: 1px solid rgba(255,255,255,0.08);
@@ -238,20 +238,6 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
     letter-spacing: 0.12em;
   }
 
-/*   .table-wrapper {
-    border-radius: 18px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-soft);
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-
-  table {
-    border-collapse: collapse;
-    font-size: 0.82rem;
-    width: 100%;
-    min-width: 700px;
-  } */
    .table-wrapper {
   border-radius: 18px;
   background: var(--bg-card);
@@ -286,21 +272,6 @@ table {
     color: var(--text-soft);
   }
 
-  /* Columna 1: posición sticky con ancho fijo */
-/*   th:nth-child(1),
-  td:nth-child(1) {
-    position: sticky;
-    left: 0;
-    z-index: 4;
-    background: var(--bg-card);
-    width: 40px;
-    min-width: 40px;
-    max-width: 40px;
-  }
-
-  thead th:nth-child(1) {
-    z-index: 5;
-  } */
    /* Columna 1: posición fija, con ancho explícito */
 th:nth-child(1),
 td:nth-child(1) {
@@ -313,16 +284,7 @@ td:nth-child(1) {
   max-width: 40px;
 }
 
-  /* Columna 2: solo escudo sticky, nombre se mueve */
-/*   th.team-col,
-  td.team-col {
-    position: sticky;
-    left: 40px; 
-    z-index: 3;
-    background: var(--bg-card);
-    text-align: left;
-    padding-left: 48px; 
-  } */
+
 /* Columna 2: equipo (solo escudo fijo) */
 th.team-col,
 td.team-col {
@@ -330,10 +292,11 @@ td.team-col {
   left: 40px;                 /* EXACTAMENTE el ancho de la col 1 */
   z-index: 3;                 /* por debajo de la col 1 */
   background: var(--bg-card);
-  padding-left: 42px;         /* hueco para el escudo */
+  padding-left: 1rem;         /* hueco para el escudo */
+  display: flex;
+  width: 240px;
 }
 
-  
 
   .pos {
     font-variant-numeric: tabular-nums;
@@ -344,41 +307,6 @@ td.team-col {
     color: var(--celta-gold);
   }
 
- /*  .team-name {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .team-name.celta span.team-name-text {
-    color: var(--celta-blue);
-    text-shadow: 0 0 12px rgba(138,195,238,0.7);
-  }
-
-  .team-dot {
-    position: sticky;
-    left: 44px;
-    z-index: 4;
-    width: 18px;
-    height: 18px;
-    border-radius: 999px;
-    background: radial-gradient(circle at 30% 20%, #ffffff, var(--celta-blue));
-    box-shadow:
-      0 0 0 1px rgba(255,255,255,0.6),
-      0 4px 8px rgba(0,0,0,0.5);
-    overflow: hidden;
-  }
-
-  .team-dot img {
-    width: 100%;
-    height: 100%;
-    border-radius: 999px;
-    object-fit: cover;
-  }
-
-  .team-name-text {
-    white-space: nowrap;
-  } */
 
   /* Escudo sticky dentro de la col 2 */
 .team-dot {
