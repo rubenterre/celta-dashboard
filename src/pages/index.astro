@@ -256,18 +256,18 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
   border-radius: 18px;
   background: var(--bg-card);
   border: 1px solid var(--border-soft);
-  overflow-x: auto;     /* scroll horizontal */
+  overflow-x: auto;      /* scroll horizontal */
   overflow-y: hidden;
 }
 
-/* Para que el sticky funcione bien */
 table {
   border-collapse: collapse;
   font-size: 0.82rem;
-  min-width: 700px;     /* obliga a hacer scroll en pantallas estrechas */
+  min-width: 700px;      /* fuerza scroll en pantallas estrechas */
 }
 
-/* Primera columna (#) fija */
+
+/* Columna 1: posición */
 th:nth-child(1),
 td:nth-child(1) {
   position: sticky;
@@ -276,20 +276,11 @@ td:nth-child(1) {
   background: var(--bg-card);
 }
 
-/* Segunda columna (Equipo) fija, pegada a la primera */
-th:nth-child(2),
-td:nth-child(2) {
-  position: sticky;
-  left: 60px;           /* ajusta este valor al ancho real de la primera col */
-  z-index: 3;
-  background: var(--bg-card);
-}
-
-/* Un poco más de z-index para el header */
-thead th:nth-child(1),
-thead th:nth-child(2) {
+/* Algo más de z-index para el header */
+thead th:nth-child(1) {
   z-index: 4;
 }
+
 
     thead {
       background: linear-gradient(90deg, rgba(138,195,238,0.18), rgba(138,195,238,0.02));
@@ -363,6 +354,37 @@ thead th:nth-child(2) {
       color: var(--celta-blue);
       text-shadow: 0 0 12px rgba(138,195,238,0.7);
     }
+
+	.team-col {
+  position: relative;
+  padding-left: 46px; /* deja hueco para el escudo fijado */
+}
+
+/* Contenedor del escudo en posición fija dentro de la celda */
+.team-dot {
+  position: sticky;
+  left: 30px;          /* se queda pegado cerca del borde */
+  z-index: 3;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 20%, #ffffff, var(--celta-blue));
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.6),
+    0 4px 8px rgba(0,0,0,0.5);
+}
+
+/* El texto del equipo se desplaza al hacer scroll */
+.team-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-name-text {
+  white-space: nowrap;
+}
+
 
     .badge {
       display: inline-flex;

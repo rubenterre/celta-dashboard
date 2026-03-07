@@ -72,10 +72,11 @@ if (team.logo) {
   dot.appendChild(img)
 }
 
-const nameSpan = document.createElement('span')
-nameSpan.textContent = team.team || ''
-teamWrapper.appendChild(dot)
-teamWrapper.appendChild(nameSpan)
+const nameSpan = document.createElement('span');
+nameSpan.className = 'team-name-text';   
+nameSpan.textContent = team.team || '';
+teamWrapper.appendChild(dot);
+teamWrapper.appendChild(nameSpan);
 
 
 
