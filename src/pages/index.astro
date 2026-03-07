@@ -99,14 +99,6 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
   .dashboard {
     width: 100%;
     max-width: 1200px;
-/*     background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.005));
-    border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow:
-      0 24px 60px rgba(0,0,0,0.7),
-      0 0 0 1px rgba(0,0,0,0.6);
-    overflow: hidden;
-    backdrop-filter: blur(14px); */
   }
 
   .header {
@@ -114,8 +106,6 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
     align-items: center;
     justify-content: space-between;
     padding: 18px 22px;
-/*     background: linear-gradient(135deg, rgba(138,195,238,0.16), rgba(11,23,32,0.9));
-    border-bottom: 1px solid rgba(255,255,255,0.08); */
   }
 
   .brand {
@@ -286,17 +276,25 @@ td:nth-child(1) {
 
 
 /* Columna 2: equipo (solo escudo fijo) */
-th.team-col,
+/* th.team-col,
 td.team-col {
   position: sticky;
-  left: 40px;                 /* EXACTAMENTE el ancho de la col 1 */
-  z-index: 3;                 /* por debajo de la col 1 */
+  left: 40px;                 
+  z-index: 3;                 
   background: var(--bg-card);
-  padding-left: 1rem;         /* hueco para el escudo */
+  padding-left: 1rem;         
   display: flex;
   width: 240px;
+} */
+td.team-col {
+  position: sticky;
+  left: 40px;              /* igual que antes */
+  z-index: 3;
+  background: var(--bg-card);
+  padding-left: 0.75rem;
+  display: flex;
+  align-items: center;
 }
-
 
   .pos {
     font-variant-numeric: tabular-nums;
@@ -309,9 +307,31 @@ td.team-col {
 
 
   /* Escudo sticky dentro de la col 2 */
+/* .team-dot {
+  position: sticky;
+  left: 44px;                
+  z-index: 4;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 20%, #ffffff, var(--celta-blue));
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.6),
+    0 4px 8px rgba(0,0,0,0.5);
+  overflow: hidden;
+} */
+
+/* .team-dot img {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  object-fit: cover;
+} */
+
+/* Escudo sigue sticky y visible */
 .team-dot {
   position: sticky;
-  left: 44px;                 /* un poco dentro de la col 2 */
+  left: 44px;
   z-index: 4;
   width: 18px;
   height: 18px;
@@ -330,11 +350,20 @@ td.team-col {
   object-fit: cover;
 }
 
+/* .team-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+} */
+
 .team-name {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  max-width: 80px;         /* ancho visible junto al escudo */
+  overflow: hidden;        /* oculta el nombre cuando “sale” */
 }
+
 
 .team-name-text {
   white-space: nowrap;
