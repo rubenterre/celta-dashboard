@@ -239,7 +239,7 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
       letter-spacing: 0.12em;
     }
 
-    .table-wrapper {
+/*     .table-wrapper {
       border-radius: 18px;
       background: var(--bg-card);
       border: 1px solid var(--border-soft);
@@ -250,7 +250,23 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
       width: 100%;
       border-collapse: collapse;
       font-size: 0.82rem;
-    }
+    } */
+
+	.table-wrapper {
+  border-radius: 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  overflow-x: auto;      /* ⬅️ permite scroll horizontal */
+  overflow-y: hidden;
+}
+
+/* Fuerza a que la tabla no se “encoja” en pantallas pequeñas */
+table {
+  width: 100%;
+  min-width: 600px;      /* ajusta este valor al ancho mínimo que quieras */
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
 
     thead {
       background: linear-gradient(90deg, rgba(138,195,238,0.18), rgba(138,195,238,0.02));
