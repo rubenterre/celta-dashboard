@@ -252,20 +252,43 @@ const celtaLogo = "url(/assets/celta-escudo.svg)";
       font-size: 0.82rem;
     } */
 
-	.table-wrapper {
+.table-wrapper {
   border-radius: 18px;
   background: var(--bg-card);
   border: 1px solid var(--border-soft);
-  overflow-x: auto;      /* ⬅️ permite scroll horizontal */
+  overflow-x: auto;     /* scroll horizontal */
   overflow-y: hidden;
 }
 
-/* Fuerza a que la tabla no se “encoja” en pantallas pequeñas */
+/* Para que el sticky funcione bien */
 table {
-  width: 100%;
-  min-width: 600px;      /* ajusta este valor al ancho mínimo que quieras */
   border-collapse: collapse;
   font-size: 0.82rem;
+  min-width: 700px;     /* obliga a hacer scroll en pantallas estrechas */
+}
+
+/* Primera columna (#) fija */
+th:nth-child(1),
+td:nth-child(1) {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  background: var(--bg-card);
+}
+
+/* Segunda columna (Equipo) fija, pegada a la primera */
+th:nth-child(2),
+td:nth-child(2) {
+  position: sticky;
+  left: 60px;           /* ajusta este valor al ancho real de la primera col */
+  z-index: 3;
+  background: var(--bg-card);
+}
+
+/* Un poco más de z-index para el header */
+thead th:nth-child(1),
+thead th:nth-child(2) {
+  z-index: 4;
 }
 
     thead {
